@@ -3,7 +3,6 @@ package frc.robot.subsystems;
 import java.io.File;
 
 import com.pathplanner.lib.auto.AutoBuilder;
-import com.pathplanner.lib.controllers.PPHolonomicDriveController;
 import com.pathplanner.lib.util.HolonomicPathFollowerConfig;
 import com.pathplanner.lib.util.PIDConstants;
 import com.pathplanner.lib.util.ReplanningConfig;
@@ -23,7 +22,6 @@ import swervelib.SwerveModule;
 import swervelib.parser.SwerveParser;
 import swervelib.telemetry.SwerveDriveTelemetry;
 import swervelib.telemetry.SwerveDriveTelemetry.TelemetryVerbosity;
-import java.util.function.BooleanSupplier;
 
 public class SwerveDriveSubsystem extends SubsystemBase {
 
@@ -46,7 +44,7 @@ public class SwerveDriveSubsystem extends SubsystemBase {
         HolonomicPathFollowerConfig config = new HolonomicPathFollowerConfig(
                         new PIDConstants(Constants.kTranslationP, 0.0, 0.0), // Translation PID constants
                         new PIDConstants(Constants.kRotationP, 0.0, 0.0), // Rotation PID constants
-                        Constants.MaxModule, Constants.kdrivebaseRadius, new ReplanningConfig()
+                        Constants.MaxModuleSpeed, Constants.kdrivebaseRadius, new ReplanningConfig()
         );
 
         // Configure AutoBuilder last

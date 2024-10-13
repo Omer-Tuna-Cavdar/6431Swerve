@@ -4,9 +4,12 @@
 
 package frc.robot;
 
-import frc.robot.subsystems.Drivetrain;
+import java.io.File;
+
+import edu.wpi.first.wpilibj.Filesystem;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.SwerveDriveSubsystem;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -20,10 +23,6 @@ public final class Constants {
   
     public static final int kDriverControllerPort = 0;
     public static final int kOperatorcontrollerPort=1;
-    public static final int ktankdriveMotor1rId= 11;
-    public static final int ktankdriveMotor2rId= 12;
-    public static final int ktankdriveMotor1lId= 13;
-    public static final int ktankdriveMotor2lId= 14;
     public static final int GyroID=21;
     public static final int kintakeRollerId = 31;
     public static final int kintakePivotid = 32;
@@ -58,9 +57,14 @@ public final class Constants {
     public static final double trackwWidth= 0.53133; //in meters //TO DO
     public static final double kmaxspeedmps = 3;//TO DO
     public static final double kmaxaccmpssqr = 2;//TO DO
-    public final static Drivetrain drivetrain = new Drivetrain();
     public final static Intake intakeSubsystem = new Intake();
     public final static Shooter shooterSubsytem = new Shooter();
+    public static final double SWERVEABSOLUTE_ENCODER_CONVERSION_FACTOR = 360;
+    public static final double MaxModuleSpeed = 0;//TO_DO
+    public static SwerveDriveSubsystem swerveDriveSubsystem = new SwerveDriveSubsystem(new File(Filesystem.getDeployDirectory(),"swerve"));
+	public static double kdrivebaseRadius = 0;//TO_DO
+    public static double kTranslationP = 0;//TO_DO
+    public static double kRotationP = 0;//TO_DO
 
     }
 
