@@ -6,19 +6,16 @@ package frc.robot;
 
 import java.io.File;
 
+import com.pathplanner.lib.util.PIDConstants;
+
+import edu.wpi.first.math.geometry.Translation3d;
+import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.Filesystem;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.SwerveDriveSubsystem;
+import swervelib.math.Matter;
 
-/**
- * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
- * constants. This class should not be used for any other purpose. All constants should be declared
- * globally (i.e. public static). Do not put anything functional in this class.
- *
- * <p>It is advised to statically import this class (or one of its inner classes) wherever the
- * constants are needed, to reduce verbosity.
- */
 public final class Constants {
   
     public static final int kDriverControllerPort = 0;
@@ -61,10 +58,16 @@ public final class Constants {
     public final static Shooter shooterSubsytem = new Shooter();
     public static final double SWERVEABSOLUTE_ENCODER_CONVERSION_FACTOR = 360;
     public static final double MaxModuleSpeed = 0;//TO_DO
+    public static final double MAX_SPEED = 0;
     public static SwerveDriveSubsystem swerveDriveSubsystem = new SwerveDriveSubsystem(new File(Filesystem.getDeployDirectory(),"swerve"));
 	public static double kdrivebaseRadius = 0;//TO_DO
     public static double kTranslationP = 0.0020645;//TO_DO
     public static double kRotationP = 0.01;//TO_DO
+    public static final PIDConstants TRANSLATION_PID = new PIDConstants(kTranslationP);
+    public static final PIDConstants ANGLE_PID = new PIDConstants(kRotationP);
+    public static final double ROBOT_MASS = (148 - 20.3) * 0.453592; // 32lbs * kg per pound
+  public static final Matter CHASSIS    = new Matter(new Translation3d(0, 0, Units.inchesToMeters(8)), ROBOT_MASS);
+  public static final double LOOP_TIME  = 0.13; //s, 20ms + 110ms sprk max velocity lag
 
     }
 

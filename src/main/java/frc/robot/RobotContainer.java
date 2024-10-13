@@ -35,12 +35,11 @@ public class RobotContainer {
     public RobotContainer() {
         
         // Configure the default command for the drivetrain
-        SwerveDriveCommand swerveDriveCommand = new SwerveDriveCommand(
-        xSupplier,
+        SwerveDriveDriveCommand swerveDriveCommand = new SwerveDriveDriveCommand(
+        Constants.swerveDriveSubsystem
+        ,xSupplier,
         ySupplier,
-        rotationSupplier,
-        fieldRelativeSupplier,
-        openLoopSupplier);
+        rotationSupplier);
 
     // Set the default command for the swerve subsystem using the instance from Constants
     Constants.swerveDriveSubsystem.setDefaultCommand(swerveDriveCommand);
