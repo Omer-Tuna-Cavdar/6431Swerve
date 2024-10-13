@@ -6,8 +6,6 @@ package frc.robot;
 
 import java.io.File;
 
-import com.pathplanner.lib.util.PIDConstants;
-
 import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.Filesystem;
@@ -63,11 +61,9 @@ public final class Constants {
 	public static double kdrivebaseRadius = 0;//TO_DO
     public static double kTranslationP = 0.0020645;//TO_DO
     public static double kRotationP = 0.01;//TO_DO
-    public static final PIDConstants TRANSLATION_PID = new PIDConstants(kTranslationP);
-    public static final PIDConstants ANGLE_PID = new PIDConstants(kRotationP);
     public static final double ROBOT_MASS = (148 - 20.3) * 0.453592; // 32lbs * kg per pound
-  public static final Matter CHASSIS    = new Matter(new Translation3d(0, 0, Units.inchesToMeters(8)), ROBOT_MASS);
-  public static final double LOOP_TIME  = 0.13; //s, 20ms + 110ms sprk max velocity lag
+    public static final Matter CHASSIS    = new Matter(new Translation3d(0, 0, Units.inchesToMeters(8)), ROBOT_MASS);
+    public static final double LOOP_TIME  = 0.13; //s, 20ms + 110ms sprk max velocity lag
 
     }
 
