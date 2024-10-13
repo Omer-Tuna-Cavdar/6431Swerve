@@ -63,8 +63,8 @@ public final class Constants {
     public static final double MaxModuleSpeed = 0;//TO_DO
     public static SwerveDriveSubsystem swerveDriveSubsystem = new SwerveDriveSubsystem(new File(Filesystem.getDeployDirectory(),"swerve"));
 	public static double kdrivebaseRadius = 0;//TO_DO
-    public static double kTranslationP = 0;//TO_DO
-    public static double kRotationP = 0;//TO_DO
+    public static double kTranslationP = 0.0020645;//TO_DO
+    public static double kRotationP = 0.01;//TO_DO
 
     }
 
